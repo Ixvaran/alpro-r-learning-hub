@@ -186,6 +186,40 @@ ini secara terbuka, dan tidak ada tombol "Jalankan" yang berpura-pura.
 
 ---
 
+## Deploy
+
+Situs ini statis sepenuhnya: tidak ada build step, environment variable, atau
+server. Dua jalur yang sudah disiapkan:
+
+### Vercel (URL `*.vercel.app`)
+
+1. Buka [vercel.com/new](https://vercel.com/new) dan masuk dengan akun GitHub
+   **Ixvaran**.
+2. Import repository `Ixvaran/alpro-r-learning-hub`.
+3. Pengaturan yang dipakai:
+   - **Framework Preset**: `Other`
+   - **Root Directory**: `./`
+   - **Build Command**, **Output Directory**, **Install Command**: kosongkan
+4. Klik **Deploy**. Selesai dalam ±20 detik.
+
+`vercel.json` sudah berisi header keamanan dasar dan cache aset, jadi tidak ada
+yang perlu diubah di dasbor. Setiap `git push` ke `main` akan memicu deploy
+baru secara otomatis.
+
+### GitHub Pages
+
+Sudah aktif di <https://ixvaran.github.io/alpro-r-learning-hub/> (dari branch
+`main`, dengan `.nojekyll`). Bisa dimatikan di Settings → Pages bila Vercel
+sudah dipakai.
+
+### Domain sendiri
+
+Tambahkan berkas `CNAME` berisi domain, lalu arahkan DNS `CNAME` ke host yang
+dipakai (`cname.vercel-dns.com` untuk Vercel, atau `<user>.github.io` untuk
+Pages).
+
+---
+
 ## Pengujian
 
 ```bash
