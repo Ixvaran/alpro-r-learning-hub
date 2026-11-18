@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ALPRO R Learning Hub · Algoritma dan Pemrograman</title>
+    <meta
+      name="description"
+      content="Media pendamping belajar Algoritma dan Pemrograman dengan R untuk mahasiswa Statistika angkatan 2026: empat modul, latihan bertingkat, tracing, dan playground."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fbfbfd" />
+
+    <!-- Tema dipasang sebelum halaman digambar: mencegah kedipan terang saat
+         sistem atau pilihan pengguna memakai mode gelap. -->
+    <script>
+      (function () {
+        var mode = 'auto';
+        try {
+          var saved = localStorage.getItem('alpro-lh-theme');
+          if (saved === 'light' || saved === 'dark' || saved === 'auto') mode = saved;
+        } catch (e) {}
+        var dark =
+          mode === 'dark' ||
+          (mode === 'auto' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var root = document.documentElement;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+        root.setAttribute('data-theme-mode', mode);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#08090c' : '#fbfbfd');
+      })();
+    </script>
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2.5' y='2.5' width='8.5' height='8.5' rx='2.2' fill='%230b6f6c'/%3E%3Crect x='13' y='2.5' width='8.5' height='8.5' rx='2.2' fill='none' stroke='%230b6f6c' stroke-width='1.6'/%3E%3Crect x='2.5' y='13' width='8.5' height='8.5' rx='2.2' fill='none' stroke='%230b6f6c' stroke-width='1.6'/%3E%3Crect x='13' y='13' width='8.5' height='8.5' rx='2.2' fill='%230b6f6c' opacity='0.4'/%3E%3C/svg%3E"
+    />
+
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-skip>Lewati ke konten</a>
+
+    <header class="nav" id="nav" data-scrolled="false"></header>
+    <div class="nav-sheet" id="navSheet" data-open="false"></div>
+
+    <main id="main" tabindex="-1"></main>
+
+    <footer class="foot" id="foot"></footer>
+
+    <div id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

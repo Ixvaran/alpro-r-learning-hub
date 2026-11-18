@@ -1,0 +1,233 @@
+/* ==========================================================================
+   ALPRO R Learning Hub — Design tokens
+   Arah visual: Apple HIG yang diterjemahkan ke web. Ruang lega, permukaan
+   netral, satu aksen, garis rambut (hairline) 1px, bayangan sangat lembut.
+   Palet tetap menghormati brief: navy sebagai tinta, teal sebagai aksi,
+   putih/abu muda sebagai kanvas, kuning hangat sebagai penanda.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* Skala tipografi. Tracking negatif untuk ukuran besar, sedikit positif
+     untuk label kecil — satu nilai untuk semua ukuran selalu salah di salah
+     satu ujung. */
+  --fs-display: clamp(2.5rem, 1.1rem + 4.6vw, 4rem);
+  --fs-h1: clamp(2rem, 1.1rem + 3vw, 3rem);
+  --fs-h2: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+  --fs-h3: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+  --fs-body: 1.0625rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --fs-code: 0.875rem;
+
+  --lh-display: 1.03;
+  --lh-heading: 1.12;
+  --lh-body: 1.68;
+  --lh-tight: 1.35;
+
+  --ls-display: -0.035em;
+  --ls-h1: -0.028em;
+  --ls-h2: -0.022em;
+  --ls-h3: -0.014em;
+  --ls-body: 0;
+  --ls-label: 0.06em;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Warna: mode terang --------------------------------------------- */
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f5f5f7;
+  --surface-3: #ececf0;
+
+  --ink: #10131a;
+  --ink-2: #4b515c;
+  --ink-3: #838a96;
+  --ink-inverse: #ffffff;
+
+  --line: rgba(16, 19, 26, 0.09);
+  --line-strong: rgba(16, 19, 26, 0.16);
+
+  --accent: #0b6f6c;
+  --accent-hover: #085b58;
+  --accent-ink: #07514f;
+  --accent-soft: #e7f2f1;
+  --accent-line: rgba(11, 111, 108, 0.28);
+  /* Teks di atas permukaan aksen. Di mode gelap aksennya terang, sehingga
+     teks putih tidak lagi memenuhi kontras. */
+  --on-accent: #ffffff;
+
+  --warm: #8a5c07;
+  --warm-strong: #b47a0c;
+  --warm-soft: #fdf4e1;
+  --warm-line: rgba(180, 122, 12, 0.32);
+
+  --danger: #a8321f;
+  --danger-soft: #fdeeea;
+  --danger-line: rgba(168, 50, 31, 0.28);
+  --success: #0a6b46;
+  --success-soft: #e6f4ec;
+
+  /* Aksen per modul — dipakai sangat hemat: penanda, bukan dekorasi. */
+  --m1: #0b6f6c;
+  --m2: #1f5f9e;
+  --m3: #8a4f9e;
+  --m4: #9a5b21;
+
+  /* ---- Kode ------------------------------------------------------------ */
+  --code-bg: #f6f6f8;
+  --code-line: rgba(16, 19, 26, 0.08);
+  --code-ink: #22262e;
+  --code-comment: #6f7683;
+  --code-string: #97502f;
+  --code-number: #1f5f9e;
+  --code-keyword: #7a3f9d;
+  --code-fn: #0b6f6c;
+  --code-op: #566070;
+  --code-punct: #7d8490;
+
+  /* ---- Bayangan -------------------------------------------------------- */
+  --sh-1: 0 1px 2px rgba(16, 19, 26, 0.05);
+  --sh-2: 0 1px 1px rgba(16, 19, 26, 0.04),
+    0 6px 18px -6px rgba(16, 19, 26, 0.1),
+    0 18px 40px -24px rgba(16, 19, 26, 0.14);
+  --sh-3: 0 2px 4px rgba(16, 19, 26, 0.04),
+    0 18px 48px -16px rgba(16, 19, 26, 0.18),
+    0 48px 96px -48px rgba(16, 19, 26, 0.22);
+
+  /* ---- Bentuk ---------------------------------------------------------- */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---- Jarak (grid 4px) ------------------------------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+
+  /* ---- Ukuran layout --------------------------------------------------- */
+  --w-wide: 1240px;
+  --w-content: 1080px;
+  --w-read: 66ch;
+  --nav-h: 52px;
+  --sidebar-w: 268px;
+
+  /* ---- Gerak ----------------------------------------------------------- */
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 140ms;
+  --t-med: 260ms;
+  --t-slow: 460ms;
+
+  /* ---- Material kaca --------------------------------------------------- */
+  --glass-bg: rgba(251, 251, 253, 0.72);
+  --glass-line: rgba(16, 19, 26, 0.08);
+  --glass-blur: saturate(180%) blur(20px);
+}
+
+/* ---- Warna: mode gelap -------------------------------------------------
+   Diterapkan lewat atribut data-theme pada <html>, yang dipasang sebelum
+   halaman digambar oleh skrip kecil di index.html. Dengan begitu tidak ada
+   kedipan tema terang saat sistem memakai mode gelap, dan pilihan pengguna
+   (terang / gelap / ikut sistem) dapat dihormati sepenuhnya. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+    --bg: #08090c;
+    --bg-elevated: #101216;
+    --surface: #131519;
+    --surface-2: #191c21;
+    --surface-3: #22262d;
+
+    --ink: #f2f3f5;
+    --ink-2: #a9b0ba;
+    --ink-3: #7c8593;
+    --ink-inverse: #08090c;
+
+    --line: rgba(255, 255, 255, 0.1);
+    --line-strong: rgba(255, 255, 255, 0.2);
+
+    --accent: #4fd1cb;
+    --accent-hover: #74e0da;
+    --accent-ink: #8ae8e2;
+    --accent-soft: rgba(79, 209, 203, 0.12);
+    --accent-line: rgba(79, 209, 203, 0.34);
+    --on-accent: #05201f;
+
+    --warm: #e8b45c;
+    --warm-strong: #f0c579;
+    --warm-soft: rgba(232, 180, 92, 0.13);
+    --warm-line: rgba(232, 180, 92, 0.34);
+
+    --danger: #ff9b86;
+    --danger-soft: rgba(255, 155, 134, 0.12);
+    --danger-line: rgba(255, 155, 134, 0.32);
+    --success: #6fd7a4;
+    --success-soft: rgba(111, 215, 164, 0.12);
+
+    --m1: #4fd1cb;
+    --m2: #7fb4f0;
+    --m3: #c79ce8;
+    --m4: #e0a86a;
+
+    --code-bg: #0d1015;
+    --code-line: rgba(255, 255, 255, 0.08);
+    --code-ink: #dfe3ea;
+    --code-comment: #76808f;
+    --code-string: #e8a08d;
+    --code-number: #79b8ff;
+    --code-keyword: #c79ce8;
+    --code-fn: #63d8d2;
+    --code-op: #a9b0ba;
+    --code-punct: #8892a0;
+
+    --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --sh-2: 0 1px 1px rgba(0, 0, 0, 0.3), 0 6px 18px -6px rgba(0, 0, 0, 0.5),
+      0 18px 40px -24px rgba(0, 0, 0, 0.6);
+    --sh-3: 0 2px 4px rgba(0, 0, 0, 0.4), 0 18px 48px -16px rgba(0, 0, 0, 0.7),
+      0 48px 96px -48px rgba(0, 0, 0, 0.8);
+
+  --glass-bg: rgba(10, 11, 14, 0.7);
+  --glass-line: rgba(255, 255, 255, 0.09);
+}
+
+/* Mode kontras tinggi: permukaan jadi solid, garis jadi jelas. */
+@media (prefers-contrast: more) {
+  :root {
+    --line: var(--line-strong);
+    --glass-bg: var(--bg);
+    --glass-blur: none;
+  }
+}
+
+/* Transparansi dimatikan: kaca menjadi permukaan padat. */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-bg: var(--bg);
+    --glass-blur: none;
+  }
+}

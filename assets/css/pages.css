@@ -1,0 +1,1050 @@
+/* ==========================================================================
+   Halaman — beranda, peta materi, pelajaran, playground, progres, glosarium
+   ========================================================================== */
+
+/* ---- Beranda: hero ----------------------------------------------------- */
+.hero {
+  padding-block: clamp(40px, 6vw, 76px) clamp(40px, 6vw, 64px);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(32px, 5vw, 68px);
+  align-items: center;
+}
+
+.hero__copy {
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+}
+
+.hero h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  font-weight: var(--fw-bold);
+  max-width: 15ch;
+}
+
+.hero h1 .soft {
+  color: var(--ink-3);
+}
+
+.hero__sub {
+  font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.3125rem);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 46ch;
+  letter-spacing: -0.008em;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.hero__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero__meta svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.7;
+}
+
+/* Kartu kode di hero — "produk" yang sesungguhnya adalah materi. */
+.hero__demo {
+  position: relative;
+  justify-self: stretch;
+}
+
+.hero__demo .code {
+  margin: 0;
+  box-shadow: var(--sh-3);
+  border-radius: var(--r-lg);
+}
+
+.hero__demo .code pre code {
+  font-size: 0.8125rem;
+}
+
+.hero__caption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.hero__caption svg {
+  width: 13px;
+  height: 13px;
+  color: var(--success);
+}
+
+/* ---- Band jalur belajar ------------------------------------------------ */
+.path {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.path__step {
+  padding: var(--s-5);
+  border-right: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  transition: background-color var(--t-med) var(--ease);
+}
+
+.path__step:last-child {
+  border-right: 0;
+}
+
+.path__step:hover {
+  background: var(--surface-2);
+  text-decoration: none;
+}
+
+.path__n {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.path__t {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.008em;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.path__d {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ---- Kartu lanjut belajar --------------------------------------------- */
+.continue {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--s-5);
+  align-items: center;
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--accent-line);
+  background: linear-gradient(
+    180deg,
+    var(--accent-soft),
+    color-mix(in oklab, var(--accent-soft) 40%, var(--surface))
+  );
+}
+
+.continue__label {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-bottom: 6px;
+}
+
+.continue__title {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.4375rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.018em;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.continue__meta {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+
+/* ---- Header modul ------------------------------------------------------ */
+.modhead {
+  display: grid;
+  gap: var(--s-5);
+  padding-bottom: var(--s-6);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--s-6);
+}
+
+.modhead__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modhead h1 {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--ls-h1);
+  font-weight: var(--fw-bold);
+  max-width: 22ch;
+}
+
+.modhead__sub {
+  font-size: 1.0625rem;
+  color: var(--ink-2);
+  max-width: 58ch;
+  line-height: 1.6;
+}
+
+.modhead__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--s-4);
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 18px;
+  background: var(--surface);
+}
+
+.panel__title {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+
+.panel ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.panel li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.panel li svg {
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.panel--warm li svg {
+  color: var(--warm-strong);
+}
+
+/* ---- Daftar pelajaran dalam modul ------------------------------------- */
+.lessonlist {
+  list-style: none;
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.lessonrow {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.lessonrow:hover {
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface-2);
+}
+
+.lessonrow__n {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.lessonrow__t {
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.008em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lessonrow__d {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+.lessonrow__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.lessonrow__arrow {
+  width: 15px;
+  height: 15px;
+  color: var(--ink-3);
+  transition: transform var(--t-med) var(--ease);
+}
+
+.lessonrow:hover .lessonrow__arrow {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+/* ---- Blok modul di peta materi ---------------------------------------- */
+.modblock {
+  padding-block: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line);
+}
+
+.modblock:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.modblock__head {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 6px;
+}
+
+.modblock__title {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  letter-spacing: -0.022em;
+  font-weight: var(--fw-semibold);
+}
+
+.modblock__title a {
+  color: var(--ink);
+}
+
+.modblock__title a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.modblock__tag {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  margin-top: 3px;
+}
+
+.modblock__meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .modblock__head {
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+  .modblock__meta {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+/* ---- Halaman pelajaran ------------------------------------------------- */
+.lesson {
+  max-width: none;
+}
+
+.lesson__head {
+  margin-bottom: var(--s-6);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.lesson__title {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  font-weight: var(--fw-bold);
+  max-width: 24ch;
+}
+
+.lesson__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.lesson__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lesson__meta svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Tujuan belajar */
+.objectives {
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  padding: 20px;
+  margin-bottom: var(--s-6);
+}
+
+.objectives__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+}
+
+.objectives ul {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.objectives li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.objectives li svg {
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+/* Penutup pelajaran */
+.recap {
+  margin-top: var(--s-7);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: var(--s-5);
+}
+
+.recap__block {
+  display: grid;
+  gap: 10px;
+}
+
+.recap__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.recap__title svg {
+  width: 14px;
+  height: 14px;
+}
+
+.recap ul {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.recap li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.recap li svg {
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  flex: none;
+}
+
+.recap li svg.ok {
+  color: var(--success);
+}
+
+.recap li svg.bad {
+  color: var(--warm-strong);
+}
+
+/* Navigasi antar pelajaran */
+.pager {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+  margin-top: var(--s-7);
+}
+
+.pager__link {
+  display: grid;
+  gap: 3px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: inherit;
+  transition: border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+
+.pager__link:hover {
+  text-decoration: none;
+  color: inherit;
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.pager__link--next {
+  text-align: right;
+}
+
+.pager__dir {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pager__link--next .pager__dir {
+  justify-content: flex-end;
+}
+
+.pager__t {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.006em;
+  color: var(--ink);
+}
+
+/* Tombol selesai */
+.donebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  justify-content: space-between;
+  margin-top: var(--s-6);
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+
+.donebar__text {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
+/* ---- Playground -------------------------------------------------------- */
+.pg {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: var(--s-4);
+  align-items: start;
+}
+
+.pg__pane {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.pg__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px 9px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.pg__title {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-right: auto;
+}
+
+.pg__editor {
+  position: relative;
+  display: grid;
+}
+
+.pg__editor textarea,
+.pg__editor pre {
+  grid-area: 1 / 1;
+  margin: 0;
+  padding: 14px 14px 14px 46px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.62;
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+  border: 0;
+  min-height: 300px;
+}
+
+.pg__editor pre {
+  pointer-events: none;
+  color: var(--code-ink);
+  background: var(--code-bg);
+}
+
+.pg__editor textarea {
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--ink);
+  outline: none;
+  -webkit-text-fill-color: transparent;
+}
+
+.pg__editor textarea::selection {
+  background: var(--accent-line);
+}
+
+.pg__editor textarea:focus-visible {
+  outline: none;
+}
+
+.pg__editor:focus-within {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.pg__gutter {
+  position: absolute;
+  white-space: pre;
+  top: 0;
+  left: 0;
+  width: 36px;
+  padding: 14px 0;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.62;
+  color: var(--ink-3);
+  background: var(--code-bg);
+  border-right: 1px solid var(--line);
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pg__out {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.62;
+  padding: 14px;
+  min-height: 300px;
+  max-height: 460px;
+  overflow: auto;
+  background: var(--code-bg);
+  color: var(--ink-2);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.pg__out .o-val {
+  color: var(--ink);
+}
+.pg__out .o-err {
+  color: var(--danger);
+}
+.pg__out .o-warn {
+  color: var(--warm-strong);
+}
+.pg__out .o-cat {
+  color: var(--ink-2);
+}
+.pg__out .o-idle {
+  color: var(--ink-3);
+}
+
+.pg__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  min-width: 0;
+}
+
+.pg__status b {
+  color: var(--success);
+  font-weight: var(--fw-medium);
+}
+
+.pg__examples {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: var(--s-3);
+}
+
+/* Catatan kejujuran simulator */
+.honest {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  padding: 13px 15px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--warm-line);
+  background: var(--warm-soft);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.honest svg {
+  width: 18px;
+  height: 18px;
+  color: var(--warm-strong);
+  margin-top: 1px;
+}
+
+.honest b {
+  color: var(--ink);
+}
+
+/* ---- Bank soal / latihan ----------------------------------------------- */
+.filters {
+  display: grid;
+  gap: var(--s-3);
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  margin-bottom: var(--s-5);
+}
+
+.filters__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filters__label {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  min-width: 74px;
+}
+
+.exlist {
+  display: grid;
+  gap: var(--s-4);
+}
+
+/* ---- Progres ----------------------------------------------------------- */
+.statgrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-3);
+  margin-bottom: var(--s-6);
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 16px;
+  background: var(--surface);
+}
+
+.stat__n {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.stat__l {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+.modstat {
+  display: grid;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.modstat:last-child {
+  border-bottom: 0;
+}
+
+.modstat__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.modstat__t {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-medium);
+}
+
+.modstat__n {
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.danger-zone {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+}
+
+/* ---- Glosarium --------------------------------------------------------- */
+.gloss {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.gloss__item {
+  display: grid;
+  grid-template-columns: minmax(150px, 200px) minmax(0, 1fr);
+  gap: var(--s-4);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.gloss__term {
+  font-size: 0.9375rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.006em;
+}
+
+.gloss__term small {
+  display: block;
+  font-weight: var(--fw-regular);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+.gloss__def {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.gloss__letter {
+  position: sticky;
+  top: calc(var(--nav-h) + 8px);
+  z-index: 2;
+  background: var(--bg);
+  padding: 8px 0 6px;
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ---- Tentang ----------------------------------------------------------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.68fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: start;
+}
+
+.factlist {
+  border-top: 1px solid var(--line);
+}
+
+.factlist__row {
+  display: grid;
+  gap: 2px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.factlist__k {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.factlist__v {
+  font-size: 0.9375rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ---- Responsif halaman ------------------------------------------------- */
+@media (max-width: 1080px) {
+  .path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .path__step:nth-child(2) {
+    border-right: 0;
+  }
+  .path__step:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .statgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-6);
+  }
+  .hero h1 {
+    max-width: 18ch;
+  }
+  .hero__demo {
+    justify-self: stretch;
+  }
+  .modhead__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pg {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .path {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .path__step {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .path__step:last-child {
+    border-bottom: 0;
+  }
+  .continue {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lessonrow {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+  .lessonrow__meta {
+    grid-column: 2;
+    gap: 10px;
+  }
+  .lessonrow__arrow {
+    display: none;
+  }
+  .gloss__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .pager {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pager__link--next {
+    text-align: left;
+  }
+  .pager__link--next .pager__dir {
+    justify-content: flex-start;
+  }
+  .pg__editor textarea,
+  .pg__editor pre {
+    min-height: 240px;
+    font-size: 0.75rem;
+  }
+  .pg__out {
+    min-height: 180px;
+  }
+}
